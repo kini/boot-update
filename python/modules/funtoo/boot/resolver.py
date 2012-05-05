@@ -59,7 +59,7 @@ class Resolver:
 					if match not in skip and match not in found:
 						# append the matching kernel, and the literal [-v]
 						# extension that was found on this kernel
-						found.append([match,match[len(wild_glob)-2:]])
+						found.append([match,match[len(scanpath)+1+pattern.find("["):]])
 		return found
 
 	def FindInitrds(self,initrds,kernel,kext):
